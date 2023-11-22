@@ -20,4 +20,12 @@ export const useCountStore = defineStore('count', {
       return this.count;
     },
   },
+  persist: {
+    enabled: true,
+    strategies: [
+      {
+        storage: localStorage, // 或 sessionStorage
+      },
+    ],
+  },
 });

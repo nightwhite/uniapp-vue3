@@ -31,25 +31,25 @@ const store = useStore();
 const data = computed(() => store.count.getCount());
 const handleBtn = async () => {
   store.count.setCount();
-  wx.login({
-    success: (res) => {
-      console.log('loginres', res);
-    },
-    fail: (error) => {
-      console.log('error', error);
-    },
-  });
-  wx.getUserProfile({
-    desc: '用于完善个人资料',
-    success: (res) => {
-      console.log('Res', res);
+  // wx.login({
+  //   success: (res) => {
+  //     console.log('loginres', res);
+  //   },
+  //   fail: (error) => {
+  //     console.log('error', error);
+  //   },
+  // });
+  // wx.getUserProfile({
+  //   desc: '用于完善个人资料',
+  //   success: (res) => {
+  //     console.log('Res', res);
 
-      userInfo.value = res.userInfo;
-    },
-    fail: (error) => {
-      console.log('error', error);
-    },
-  });
+  //     userInfo.value = res.userInfo;
+  //   },
+  //   fail: (error) => {
+  //     console.log('error', error);
+  //   },
+  // });
 
   console.log('getStreetApi', await getStreetApi({ aa: 1 }));
 };
